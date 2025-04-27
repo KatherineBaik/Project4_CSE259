@@ -59,6 +59,9 @@ son_in_law(X,Y) :- married(X, Z), daughter(Z, Y).
 uncle(X, Y) :- male(X), parent(Z, Y), brother(X, Z).
 aunt(X, Y) :- female(X), parent(Z, Y), sister(X, Z).
 
+sibling_in_law(X, Y) :- married(X, Z), sibling(Z, Y).
+sibling_in_law(X, Y) :- sibling(X, Z), married(Z, Y).
+
 step_parent(X, Y) :- married(X, Z), parent(Z, Y).
 
 grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
