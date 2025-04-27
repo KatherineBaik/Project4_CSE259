@@ -51,6 +51,16 @@ mother(X, Y) :- female(X), married(Husband, X), parent(Husband, Y). %If married,
 son(X, Y) :- male(X), parent(Y, X).
 daughter(X, Y) :- female(X), parent(Y, X).
 
+in_law(X, Y) :- parent(X, Z), married(Z, Y).
+in_law(X, Y) :- parent(X, Z), married(Y, Z).
+
+son_in_law(X,Y) :- married(X, Z), daughter(Z, Y).
+
+uncle(X, Y) :- male(X), parent(Z, Y), brother(X, Z).
+aunt(X, Y) :- female(X), parent(Z, Y), sister(X, Z).
+
+step_parent(X, Y) :- married(X, Z), parent(Z, Y).
+
 grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
 grandchild(X, Y) :- grandparent(Y, X).
 
