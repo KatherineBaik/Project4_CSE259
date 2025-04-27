@@ -48,3 +48,10 @@ father(X, Y) :- male(X), married(X, Wife), parent(Wife, Y). %If married, and wif
 mother(X, Y) :- female(X), parent(X, Y).
 mother(X, Y) :- female(X), married(Husband, X), parent(Husband, Y). %If married, and husband has son
 
+son(X, Y) :- male(X), parent(Y, X).
+daughter(X, Y) :- female(X), parent(Y, X).
+
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+grandchild(X, Y) :- grandparent(Y, X).
+
+brother(X, Y) :- male(X), parent(Z, X), parent(Z, Y), X \= Y.
