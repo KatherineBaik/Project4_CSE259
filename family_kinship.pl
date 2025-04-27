@@ -51,8 +51,8 @@ mother(X, Y) :- female(X), married(Husband, X), parent(Husband, Y). %If married,
 son(X, Y) :- male(X), parent(Y, X).
 daughter(X, Y) :- female(X), parent(Y, X).
 
-in_law(X, Y) :- parent(X, Z), married(Z, Y).
-in_law(X, Y) :- parent(X, Z), married(Y, Z).
+parent_in_law(X, Y) :- parent(X, Z), married(Z, Y).
+parent_in_law(X, Y) :- parent(X, Z), married(Y, Z).
 
 son_in_law(X,Y) :- married(X, Z), daughter(Z, Y).
 
