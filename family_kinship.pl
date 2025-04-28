@@ -65,6 +65,7 @@ aunt(X, Y) :- female(X), parent_of(Z, Y), sister(X, Z).
 
 sibling_in_law(X, Y) :- married(X, Z), sibling(Z, Y).
 sibling_in_law(X, Y) :- sibling(X, Z), married(Z, Y).
+sibling_in_law(X, Y) :- married(X, A), married(Y, B), sibling(A, B).
 
 step_parent(X, Y) :- married(X, Z), parent_of(Z, Y).
 
