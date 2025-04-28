@@ -94,7 +94,7 @@ brother(X, Y) :- male(X), parent_of(Z, X), parent_of(Z, Y), X \= Y.
 
 runit :- parent_in_law(i, father), 	write(yes), nl,
 	step_parent(i, redhair), 	write(yes), nl,
-	sibling_in_law(babyboy, father),write(yes), nl, %Right now fails, everything else works
+	sibling_in_law(father, babyboy),write(yes), nl,
 	uncle(babyboy, i), 		write(yes), nl,
 	brother(babyboy, redhair), 	write(yes), nl,
 	grandchild(onrun, i), 		write(yes), nl,
